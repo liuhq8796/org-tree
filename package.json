@@ -1,8 +1,16 @@
 {
   "name": "org-tree",
   "version": "0.0.0",
-  "private": true,
   "type": "module",
+  "files": ["dist"],
+  "main": "./dist/org-tree.umd.cjs",
+  "module": "./dist/org-tree.js",
+  "exports": {
+    ".": {
+      "import": "./dist/org-tree.js",
+      "require": "./dist/org-tree.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
